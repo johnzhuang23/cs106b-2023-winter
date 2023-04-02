@@ -5,6 +5,7 @@
  * TODO: Edit these comments to leave a puzzle for your section leader to solve!
  */
 #include "OnlyConnect.h"
+
 using namespace std;
 
 string onlyConnectize(string phrase) {
@@ -12,13 +13,16 @@ string onlyConnectize(string phrase) {
      * warning messages when this function isn't implemented. Delete this
      * comment and the next few lines, then implement this function.
      */
-    (void) phrase;
-    return "";
+    //(void) phrase;
+    //return "";
+    if (phrase == "")
+        return phrase;
+    char letter = toupper(phrase[0]);
+    if(isalpha(letter) && letter!='A' && letter!='E' && letter!='I' && letter!='O' && letter!='U') {
+        return letter+onlyConnectize(phrase.substr(1));
+    }
+    return onlyConnectize(phrase.substr(1));
 }
-
-
-
-
 
 
 /* * * * * * Provided Test Cases * * * * * */
